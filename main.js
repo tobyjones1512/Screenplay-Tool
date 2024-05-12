@@ -2,12 +2,12 @@ document.getElementById('deleteAtCursorBtn').addEventListener('click', function(
     const selection = window.getSelection();
     const range = selection.getRangeAt(0);
     const node = range.startContainer.parentNode;
-    if (node.isContentEditable && node.nodeName == "p") {
+    if (node.isContentEditable && node.id != "titleTxt") {
         node.parentNode.removeChild(node);
     }
     selection.empty();
 
-    if (!document.getElementsByClassName("margins")[0].innerHTML.contains("<p")) {
+    if (!String(document.getElementsByClassName("margins")[0].innerHTML).contains("<p")) {
       document.getElementsByClassName("margins")[0].innerHTML = "<p class=\"action\" contenteditable>[Insert content here]</p>";
     }
 });
@@ -41,7 +41,7 @@ document.getElementById('characterBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeName == "p") {
+  if (node.isContentEditable && node.id != "titleTxt") {
     node.classList = ['character']
   }
   selection.empty();
@@ -51,7 +51,7 @@ document.getElementById('dialogueBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeName == "p") {
+  if (node.isContentEditable && node.id != "titleTxt") {
     node.classList = ['dialogue']
   }
   selection.empty();
@@ -61,7 +61,7 @@ document.getElementById('sceneHeadingBtn').addEventListener('click', function() 
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeName == "p") {
+  if (node.isContentEditable && node.id != "titleTxt") {
     node.classList = ['sceneHeading']
   }
   selection.empty();
@@ -71,7 +71,7 @@ document.getElementById('parenthesisBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeName == "p") {
+  if (node.isContentEditable && node.id != "titleTxt") {
     node.classList = ['parenthesis']
   }
   selection.empty();
@@ -81,7 +81,7 @@ document.getElementById('actionBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeName == "p") {
+  if (node.isContentEditable && node.id != "titleTxt") {
     node.classList = ['action']
   }
   selection.empty();
@@ -91,7 +91,7 @@ document.getElementById('transitionBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeName == "p") {
+  if (node.isContentEditable && node.id != "titleTxt") {
     node.classList = ['transition']
   }
   selection.empty();
@@ -108,7 +108,7 @@ document.addEventListener('keydown', function(e) {
     const selection = window.getSelection();
     const range = selection.getRangeAt(0);
     const node = range.startContainer.parentNode;
-    if (node.isContentEditable) {
+    if (node.isContentEditable && node.id != "titleTxt") {
         if (e.key === '/') {
             e.preventDefault();
             const popup = document.getElementsByClassName('floatingOptions')[0];
