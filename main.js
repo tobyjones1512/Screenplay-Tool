@@ -175,24 +175,40 @@ document.getElementById('exportBtn').addEventListener('click', function() {
 });
 
 document.getElementById('openBtn').addEventListener('click', function() {
+  // const input = document.createElement('input');
+  // input.type = 'file';
+  // input.accept = '.splt';
+  // input.addEventListener('change', function() {
+  //   const file = input.files[0];
+  //   const reader = new FileReader();
+  //   reader.onload = function() {
+  //     const text = reader.result;
+  //     alert(text);
+  //     alert(reader.filename);
+
+  //     document.removeChild(input);
+  //   };
+  //   reader.readAsText(file);
+  // });
+
   const input = document.createElement('input');
   input.type = 'file';
   input.accept = '.splt';
+  document.body.appendChild(input);
+
+  reader.onload = function(e) {
+    // Process file content using e.target.result
+    const text = e.target.result;
+
+    document.getElementsByClassName("page")[0].innerHTML = text;
+    document.getElementById("titleTxt").innerText = reader.filename;
+  };
+
   input.addEventListener('change', function() {
     const file = input.files[0];
-    const reader = new FileReader();
-    alert(file);
-    reader.onload = function() {
-      const text = reader.result;
-      alert(text);
-      alert(reader.name);
-      document.getElementsByClassName("page")[0].innerHTML = text;
-      document.getElementById("titleTxt").innerText = reader.name;
-
-      document.removeChild(input);
-    };
     reader.readAsText(file);
   });
+
   input.click();
 });
 
