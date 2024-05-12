@@ -1,0 +1,188 @@
+body {
+    margin: 2.5% 2.5% 2.5% 2.5%;
+    background-color: whitesmoke;
+    font-family: "Courier New";
+    font-size: 12pt;
+}
+
+h1 {
+    font-size: 18pt;
+    font-weight: 800;
+}
+
+p {
+    border: none;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+HStack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 1% 1% 1% 1%;
+}
+
+VStack {
+    align-items: center;
+}
+
+.margins {
+    padding-left: 1.5in;
+    padding-right: 1in;
+    padding-top: 1in;
+    padding-bottom: 1in;
+}
+
+.page {
+    min-width: 210mm;
+    max-width: 210mm;
+    width: 210mm;
+    min-height: 297mm;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#pageArea {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.character {
+    margin-left: 2.2in;
+    text-transform: uppercase;
+    margin-top: 12pt;
+    margin-bottom: 0px;
+}
+
+.dialogue {
+    margin-left: 1in;
+    margin-right: 0.75in;
+    text-align: justify;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.action {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.parenthesis {
+    margin-left: 1.5in;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sceneHeading {
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 24pt;
+    margin-bottom: 0px;
+}
+
+.transition {
+    text-transform: uppercase;
+    text-align: end;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+toolbar {
+    position: fixed;
+    overflow-x: scroll;
+    top: 0.5%;
+    left: 2.5%;
+    width: 90%;
+    border-radius: 20px;
+    /* height: 25px; */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 999;
+}
+
+button {
+    background-color: beige;
+    border-radius: 10px;
+    border: 0px;
+}
+
+button:hover {
+    background-color: antiquewhite;
+}
+
+.floatingPlus {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%;
+    background: rgba(0, 119, 30, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.floatingPlus:hover {
+    cursor: pointer;
+    background: gray;
+}
+
+.floatingPlus2 {
+    position: fixed;
+    bottom: 20px;
+    left: 80px;
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%;
+    background: rgba(0, 119, 30, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.floatingPlus2:hover {
+    cursor: pointer;
+    background: gray;
+}
+
+.floatingMinus {
+    position: fixed;
+    bottom: 20px;
+    left: 140px;
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%;
+    background: rgba(139, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.floatingMinus:hover {
+    cursor: pointer;
+    background: gray;
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.floatingOptions {
+    position: fixed;
+    bottom: 40%;
+    left: 32.5%;
+    width: 35%;
+    height: 20%; 
+    border-radius: 10px;
+    background: rgba(255, 248, 151, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}

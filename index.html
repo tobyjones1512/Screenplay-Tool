@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer type="text/javascript" src="/main.js"></script>
+  <title>Screenplay Tool</title>
+  <link href='/style.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <toolbar>
+    <HStack>
+      <!-- <button id="newBtn">New</button> -->
+
+      <button id="openBtn">Open</button>
+
+      <button id="saveBtn">Save</button>
+
+      <button id="exportBtn">Export</button>
+
+      <button id="sceneHeadingBtn" style="margin-left: 20px;">Scene Heading</button>
+      <button id="characterBtn">Character</button>
+      <button id="dialogueBtn">Dialogue</button>
+      <button id="parenthesisBtn">Parenthesis</button>
+      <button id="actionBtn">Action</button>
+      <button id="transitionBtn">Transition</button>
+    </HStack>
+  </toolbar>
+
+  <button class="floatingPlus prevent-select" id="insertBeforeCursorBtn">Insert Before</button>
+  <button class="floatingPlus2 prevent-select" id="insertAfterCursorBtn">Insert After</button>
+
+  <button class="floatingMinus prevent-select" id="deleteAtCursorBtn">Delete</button>
+
+  <div class="floatingOptions prevent-select" style="display: none;">
+    <ol>
+      <li>Scene Heading</li>
+      <li>Character</li>
+      <li>Dialogue</li>
+      <li>Parenthesis</li>
+      <li>Action</li>
+      <li>Transition</li>
+    </ul>
+  </div>
+
+  <VStack class="prevent-select">
+    <HStack>
+      <h1 style="margin-top: 50px;" contenteditable id="titleTxt">Untitled Screenplay</h1>
+    </HStack>
+
+    <HStack id="pageArea">
+      <div class="page">
+        <div class="margins">
+            <p class="character" contenteditable>Robert Downey</p>
+            <p class="dialogue" contenteditable>Hi, how are you today?</p>
+            <p class="character" contenteditable>Chris Evans</p>
+            <p class="dialogue" contenteditable>Very good. And you?</p>
+        </div>
+      </div>
+    </HStack>
+  </VStack>
+</body>
+</html>
