@@ -181,6 +181,7 @@ document.getElementById('openBtn').addEventListener('click', function() {
   input.addEventListener('change', function() {
     const file = input.files[0];
     const reader = new FileReader();
+    alert(file);
     reader.onload = function() {
       const text = reader.result;
       alert(text);
