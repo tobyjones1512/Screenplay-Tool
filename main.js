@@ -185,6 +185,8 @@ document.getElementById('openBtn').addEventListener('click', function() {
       const text = reader.result;
       document.getElementsByClassName("page")[0].innerHTML = text;
       document.getElementById("titleTxt").innerText = reader.name;
+
+      document.removeChild(input);
     };
     reader.readAsText(file);
   });
