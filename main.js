@@ -7,7 +7,7 @@ document.getElementById('deleteAtCursorBtn').addEventListener('click', function(
     }
     selection.empty();
 
-    if (!String(document.getElementsByClassName("margins")[0].innerHTML).contains("<p")) {
+    if (!String(document.getElementsByClassName("margins")[0].innerHTML).trim().includes("<p")) {
       document.getElementsByClassName("margins")[0].innerHTML = "<p class=\"action\" contenteditable>[Insert content here]</p>";
     }
 });
