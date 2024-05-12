@@ -2,10 +2,14 @@ document.getElementById('deleteAtCursorBtn').addEventListener('click', function(
     const selection = window.getSelection();
     const range = selection.getRangeAt(0);
     const node = range.startContainer.parentNode;
-    if (node.isContentEditable) {
+    if (node.isContentEditable && node.nodeType == "p") {
         node.parentNode.removeChild(node);
     }
     selection.empty();
+
+    if (!document.getElementsByClassName("margins")[0].innerHTML.contains("<p")) {
+      document.getElementsByClassName("margins")[0].innerHTML = "<p class=\"action\" contenteditable>[Insert content here]</p>";
+    }
 });
 
 document.getElementById('insertBeforeCursorBtn').addEventListener('click', function() {
@@ -37,7 +41,7 @@ document.getElementById('characterBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable) {
+  if (node.isContentEditable && node.nodeType == "p") {
     node.classList = ['character']
   }
   selection.empty();
@@ -47,7 +51,7 @@ document.getElementById('dialogueBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable) {
+  if (node.isContentEditable && node.nodeType == "p") {
     node.classList = ['dialogue']
   }
   selection.empty();
@@ -57,7 +61,7 @@ document.getElementById('sceneHeadingBtn').addEventListener('click', function() 
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable) {
+  if (node.isContentEditable && node.nodeType == "p") {
     node.classList = ['sceneHeading']
   }
   selection.empty();
@@ -67,7 +71,7 @@ document.getElementById('parenthesisBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable) {
+  if (node.isContentEditable && node.nodeType == "p") {
     node.classList = ['parenthesis']
   }
   selection.empty();
@@ -77,7 +81,7 @@ document.getElementById('actionBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable) {
+  if (node.isContentEditable && node.nodeType == "p") {
     node.classList = ['action']
   }
   selection.empty();
@@ -87,7 +91,7 @@ document.getElementById('transitionBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable) {
+  if (node.isContentEditable && node.nodeType == "p") {
     node.classList = ['transition']
   }
   selection.empty();
@@ -175,22 +179,6 @@ document.getElementById('exportBtn').addEventListener('click', function() {
 });
 
 document.getElementById('openBtn').addEventListener('click', function() {
-  // const input = document.createElement('input');
-  // input.type = 'file';
-  // input.accept = '.splt';
-  // input.addEventListener('change', function() {
-  //   const file = input.files[0];
-  //   const reader = new FileReader();
-  //   reader.onload = function() {
-  //     const text = reader.result;
-  //     alert(text);
-  //     alert(reader.filename);
-
-  //     document.removeChild(input);
-  //   };
-  //   reader.readAsText(file);
-  // });
-
   const input = document.createElement('input');
   input.type = 'file';
   input.accept = '.splt';
