@@ -2,7 +2,7 @@ document.getElementById('deleteAtCursorBtn').addEventListener('click', function(
     const selection = window.getSelection();
     const range = selection.getRangeAt(0);
     const node = range.startContainer.parentNode;
-    if (node.isContentEditable && node.nodeType == "p") {
+    if (node.isContentEditable && node.nodeName == "p") {
         node.parentNode.removeChild(node);
     }
     selection.empty();
@@ -41,7 +41,7 @@ document.getElementById('characterBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeType == "p") {
+  if (node.isContentEditable && node.nodeName == "p") {
     node.classList = ['character']
   }
   selection.empty();
@@ -51,7 +51,7 @@ document.getElementById('dialogueBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeType == "p") {
+  if (node.isContentEditable && node.nodeName == "p") {
     node.classList = ['dialogue']
   }
   selection.empty();
@@ -61,7 +61,7 @@ document.getElementById('sceneHeadingBtn').addEventListener('click', function() 
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeType == "p") {
+  if (node.isContentEditable && node.nodeName == "p") {
     node.classList = ['sceneHeading']
   }
   selection.empty();
@@ -71,7 +71,7 @@ document.getElementById('parenthesisBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeType == "p") {
+  if (node.isContentEditable && node.nodeName == "p") {
     node.classList = ['parenthesis']
   }
   selection.empty();
@@ -81,7 +81,7 @@ document.getElementById('actionBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeType == "p") {
+  if (node.isContentEditable && node.nodeName == "p") {
     node.classList = ['action']
   }
   selection.empty();
@@ -91,7 +91,7 @@ document.getElementById('transitionBtn').addEventListener('click', function() {
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const node = range.startContainer.parentNode;
-  if (node.isContentEditable && node.nodeType == "p") {
+  if (node.isContentEditable && node.nodeName == "p") {
     node.classList = ['transition']
   }
   selection.empty();
