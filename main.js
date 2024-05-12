@@ -196,6 +196,8 @@ document.getElementById('openBtn').addEventListener('click', function() {
   input.accept = '.splt';
   document.body.appendChild(input);
 
+  const reader = new FileReader();
+
   reader.onload = function(e) {
     // Process file content using e.target.result
     const text = e.target.result;
