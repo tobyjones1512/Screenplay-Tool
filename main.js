@@ -183,6 +183,8 @@ document.getElementById('openBtn').addEventListener('click', function() {
     const reader = new FileReader();
     reader.onload = function() {
       const text = reader.result;
+      alert(text);
+      alert(reader.name);
       document.getElementsByClassName("page")[0].innerHTML = text;
       document.getElementById("titleTxt").innerText = reader.name;
 
