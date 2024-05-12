@@ -191,6 +191,8 @@ document.getElementById('openBtn').addEventListener('click', function() {
     const text = e.target.result;
 
     document.getElementsByClassName("page")[0].innerHTML = text;
+
+    document.removeChild(input);
   };
 
   input.addEventListener('change', function() {
