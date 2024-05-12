@@ -203,7 +203,7 @@ document.getElementById('openBtn').addEventListener('click', function() {
     const text = e.target.result;
 
     document.getElementsByClassName("page")[0].innerHTML = text;
-    document.getElementById("titleTxt").innerText = reader.filename;
+    document.getElementById("titleTxt").innerText = e.target.filename;
   };
 
   input.addEventListener('change', function() {
