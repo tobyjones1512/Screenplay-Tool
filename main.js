@@ -190,8 +190,10 @@ document.getElementById('openBtn').addEventListener('click', function() {
     // Process file content using e.target.result
     const text = e.target.result;
 
+    console.log(e.filename);
+
     document.getElementsByClassName("page")[0].innerHTML = text;
-    document.getElementById("titleTxt").innerText = e.target.filename;
+    document.getElementById("titleTxt").innerText = e.filename;
   };
 
   input.addEventListener('change', function() {
