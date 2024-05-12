@@ -195,7 +195,7 @@ document.getElementById('openBtn').addEventListener('click', function() {
 
   input.addEventListener('change', function() {
     const file = input.files[0];
-    document.getElementById("titleTxt").innerText = file.name;
+    document.getElementById("titleTxt").innerText = file.name.replace(".splt", "");
     reader.readAsText(file);
   });
 
