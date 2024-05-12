@@ -183,7 +183,7 @@ document.getElementById('openBtn').addEventListener('click', function() {
     const reader = new FileReader();
     reader.onload = function() {
       const text = reader.result;
-      console.log(text);
+      document.getElementsByClassName("page")[0].innerHTML = text;
     };
     reader.readAsText(file);
   });
