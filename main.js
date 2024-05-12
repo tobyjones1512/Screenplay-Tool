@@ -190,14 +190,12 @@ document.getElementById('openBtn').addEventListener('click', function() {
     // Process file content using e.target.result
     const text = e.target.result;
 
-    console.log(e.filename);
-
     document.getElementsByClassName("page")[0].innerHTML = text;
-    document.getElementById("titleTxt").innerText = e.filename;
   };
 
   input.addEventListener('change', function() {
     const file = input.files[0];
+    document.getElementById("titleTxt").innerText = file.name;
     reader.readAsText(file);
   });
 
